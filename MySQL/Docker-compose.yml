@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mysql:
+    container_name: main_mysql
+    restart: always
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: '3mDnc8amaJA'
+      MYSQL_USER: 'myUser'
+      MYSQL_PASS: 'sdfkjhaN'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    volumes:
+      - ./etc/my.cnf:/etc/my.cnf
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
